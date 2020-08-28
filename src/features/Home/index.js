@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -9,6 +10,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.goToFeed = this.goToFeed.bind(this);
+  }
+
+  goToFeed() {
+    this.props.navigation.navigate('Feed');
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -36,7 +46,7 @@ class Home extends Component {
             </Text>
           </Card>
           <Card containerStyle={styles.infoCard}>
-            <Button title="Begin" />
+            <Button title="Begin" onPress={this.goToFeed} />
           </Card>
           <Card containerStyle={styles.infoCard}>
             <Text
