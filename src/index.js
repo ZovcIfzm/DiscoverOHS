@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 //Redux
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import reducer from './reducers/index';
+import reducer from './redux/rootReducer';
 const store = createStore(reducer);
 
 //Navigator
